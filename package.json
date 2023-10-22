@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-check-installed-apps",
+  "version": "1.0.0",
+  "description": "Checking the application is already installed in iOS devices or not",
+  "cordova": {
+    "id": "cordova-plugin-check-installed-apps",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Champika Mendis",
+  "license": "ISC"
+}

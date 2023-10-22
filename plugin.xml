@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-check-installed-apps" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>CheckInstalledApps</name>
+    <js-module name="CheckInstalledApps" src="www/checkInstalledApps.js">
+        <clobbers target="CheckInstalledApps" />
+    </js-module>
+    <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+        <feature name="CheckInstalledApps">
+            <param name="ios-package" value="CheckInstalledApps" />
+        </feature>
+    </config-file>
+    <header-file src="src/ios/CheckInstalledApps.h" />
+    <source-file src="src/ios/CheckInstalledApps.m" />
+</platform>
+</plugin>
