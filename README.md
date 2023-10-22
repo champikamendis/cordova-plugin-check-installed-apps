@@ -1,18 +1,18 @@
-# cordova-plugin-detect-jailbreak
-This is a cordova plugin for **iOS** to detect whether our device is jailbreak or not. This is very useful plugin for critically and commercially important applications to avoid the usage of jailbroken users which might halmful for those systems.
+# cordova-plugin-check-installed-apps
+This is a cordova plugin for **iOS** to detect whether an Application is already installed on the device or not. This is very useful plugin for url redirections and deep linking scenarios.
 
 You can use following line to call the plugin
 ```
-DetectJailbreak.detectJailbreak(successCallback, errorCallback);
+CheckInstalledApps.checkInstalledApps(successCallback, errorCallback);
 ```
 
 You can access the callbacks like following code.
 ```
-function successCallback(isJailbroken) {
-    console.log("This is success callback & jailbreak status: ", isJailbroken);
+function successCallback(isAvailableApp) {
+    console.log("Is this application is already installed in the device: ", isAvailableApp);
 }
 
 function errorCallback(error) {
-    console.log("This is error: ", error);
+    console.log("Something went wrong: ", error);
 }
 ```
