@@ -9,12 +9,12 @@
 
 - (void) checkInstalledApps:(CDVInvokedUrlCommand*)command;
 {
-    NSString* appName = [command.arguments objectAtIndex:0];
+    NSString* appName = @[command.arguments objectAtIndex:0];
     CDVPluginResult *pluginResult;
 
     @try
     {
-        bool isApplicationAvailable = [self isApplicationAvailabl];
+        bool isApplicationAvailable = [self isApplicationAvailable];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:isApplicationAvailable];
     
     }
