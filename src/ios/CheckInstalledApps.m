@@ -13,7 +13,7 @@
 
     @try
     {
-        bool jailbroken = [self jailbroken];
+        bool isApplicationAvailable = [self isApplicationAvailable];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:isApplicationAvailable];
     
     }
