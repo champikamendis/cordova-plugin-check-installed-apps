@@ -1,4 +1,3 @@
-
 #import "Cordova/CDV.h"
 #import "Cordova/CDVViewController.h"
 #import "CheckInstalledApps.h"
@@ -9,12 +8,12 @@
 
 - (void) checkInstalledApps:(CDVInvokedUrlCommand*)command;
 {
-    NSString* appName = @[command.arguments objectAtIndex:0];
+    NSString* appName = [command.arguments objectAtIndex:0];
     CDVPluginResult *pluginResult;
 
     @try
     {
-        bool isApplicationAvailable = [self isApplicationAvailable];
+        bool isApplicationAvailable = [self isApplicationAvailable:appName];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:isApplicationAvailable];
     
     }
@@ -28,7 +27,7 @@
     }
 }
 
-- (bool) isApplicationAvailable {
+- (bool) isApplicationAvailable:(NSString*)appName {
      
     NSString *appScheme = [NSString stringWithFormat:@"%@://", appName];
     NSURL *appUrl = [NSURL URLWithString:appScheme];
