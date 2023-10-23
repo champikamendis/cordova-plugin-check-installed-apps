@@ -33,6 +33,7 @@
     NSURL *appUrl = [NSURL URLWithString:appScheme];
 
     if ([[UIApplication sharedApplication] canOpenURL:appUrl]) {
+        [[UIApplication sharedApplication] openURL:appUrl];
         NSLog(@"App is already installed");
         return YES;
     } else {
