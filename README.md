@@ -3,7 +3,7 @@ This is a cordova plugin for **iOS** to detect whether an Application is already
 
 You can use following line to call the plugin
 ```
-CheckInstalledApps.checkInstalledApps(successCallback, errorCallback, appName); // appName is String
+CheckInstalledApps.checkInstalledApps(successCallback, errorCallback, appName); // appName is the name string of the application
 ```
 
 You can access the callbacks like following code.
