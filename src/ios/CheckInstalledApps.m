@@ -8,12 +8,12 @@
 
 - (void) checkInstalledApps:(CDVInvokedUrlCommand*)command;
 {
-    NSString* appScheme = [command.arguments objectAtIndex:0];
+    NSString* appName = [command.arguments objectAtIndex:0];
     CDVPluginResult *pluginResult;
 
     @try
     {
-        bool isApplicationAvailable = [self isApplicationAvailable:appScheme];
+        bool isApplicationAvailable = [self isApplicationAvailable:appName];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:isApplicationAvailable];
     
     }
@@ -27,11 +27,13 @@
     }
 }
 
-- (bool) isApplicationAvailable:(NSString*)appScheme {
+- (bool) isApplicationAvailable:(NSString*)appName {
      
+    NSString *appScheme = [NSString stringWithFormat:@"%@://", appName];
     NSURL *appUrl = [NSURL URLWithString:appScheme];
 
     if ([[UIApplication sharedApplication] canOpenURL:appUrl]) {
+        [[UIApplication sharedApplication] openURL:appUrl];
         NSLog(@"App is already installed");
         return YES;
     } else {
