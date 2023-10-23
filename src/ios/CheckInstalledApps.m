@@ -8,7 +8,9 @@
 
 - (void) checkInstalledApps:(CDVInvokedUrlCommand*)command;
 {
+    NSLog(@"AAAAAAAAAAAA:", command.arguments);
     NSString* appName = [command.arguments objectAtIndex:0];
+    NSLog(@"AAAAAAAAAAAA:", appName);
     CDVPluginResult *pluginResult;
 
     @try
