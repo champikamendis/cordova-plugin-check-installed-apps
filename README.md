@@ -17,3 +17,4 @@ function errorCallback(error) {
     console.log("Something went wrong: ", error);
 }
 ```
+The plugin will return true if the app is available in the device otherwise it will return false.
