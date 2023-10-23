@@ -2,8 +2,8 @@ const exec = require("cordova/exec");
 const SERVICE = "CheckInstalledApps";
 
 const CheckInstalledApps = {
-  checkInstalledApps: function(cb, err) {
-    exec(cb, err, SERVICE, "checkInstalledApps", []);
+  checkInstalledApps: function(cb, err, appName) {
+    exec(cb, err, SERVICE, "checkInstalledApps", [appName]);
   },
 };
 
